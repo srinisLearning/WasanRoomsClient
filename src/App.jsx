@@ -12,14 +12,13 @@ import AdminUserPage from "./pages/admin/AdminUserPage";
 import AdminRoomPage from "./pages/admin/AdminRoomPage";
 import AdminBookingsPage from "./pages/admin/AdminBookingsPage";
 import ProfilePage from "./pages/ProfilePage";
-import FileUploadComponent from "./components/FileUploadComponent";
-import TestPage from "./pages/TestPage";
+
 //import "dotenv/config";
 //BASE_URL = process.env.REACT_APP_API_URL;
 //axios.defaults.baseURL = BASE_URL;
-//axios.defaults.baseURL = " http://127.0.0.1:6066";
-axios.defaults.baseURL = "https://wasan-rooms-server.onrender.com";
+axios.defaults.baseURL = " http://127.0.0.1:6066";
 function App() {
+  //console.log(process.env.REACT_APP_API_URL);
   return (
     <>
       <Navbar />
@@ -37,8 +36,6 @@ function App() {
         <Route path="/admin/rooms" element={<AdminRoomPage />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="*" element={<h1>Not Found</h1>} />
-        <Route path="/fileupload" element={<FileUploadComponent />} />
-        <Route path="/testPage" element={<TestPage />} />
       </Routes>
 
       <footer className="bg-primary text-white text-center p-4 h-25 w-full">
