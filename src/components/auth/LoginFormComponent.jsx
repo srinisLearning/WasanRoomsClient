@@ -31,10 +31,7 @@ const LoginFormComponent = () => {
       console.log(user);
       try {
         setLoading(true);
-        const result = await axios.post(
-          "wasan-room-server.netlify.app:6066/api/users/login",
-          user
-        );
+        const result = await axios.post("/api/users/login", user);
         setLoading(false);
         localStorage.setItem("loggedInUser", JSON.stringify(result.data));
         window.location.href = "/home";
