@@ -18,7 +18,7 @@ import TestPage from "./pages/TestPage";
 //BASE_URL = process.env.REACT_APP_API_URL;
 //axios.defaults.baseURL = BASE_URL;
 //axios.defaults.baseURL = " http://127.0.0.1:6066";
-axios.defaults.baseURL = "https://wasan-rooms-server.vercel.app";
+axios.defaults.baseURL = "https://wasan-rooms-server.vercel.app:6066";
 function App() {
   return (
     <>
