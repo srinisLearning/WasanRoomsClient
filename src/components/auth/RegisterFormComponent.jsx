@@ -45,7 +45,10 @@ const RegisterFormComponent = () => {
     try {
       setLoading(true);
 
-      const result = await axios.post("/api/users/register", user);
+      const result = await axios.post(
+        "wasan-room-server.netlify.app:6066/api/users/register",
+        user
+      );
       setLoading(false);
       setSuccess(true);
       setUser({
