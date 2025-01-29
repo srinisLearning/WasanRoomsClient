@@ -40,7 +40,7 @@ function App() {
       </Routes>
 
       <footer className="bg-primary text-white text-center p-4 h-25 w-full">
-        &copy; 2024 Wasan Rooms
+        &copy; 2025 Wasan Rooms
       </footer>
     </>
   );
