@@ -36,15 +36,14 @@ const AdminEditRoomModal = ({ show, onClose, room }) => {
         formData
       );
       console.log("Response", response);
-
-      SWAL.fire({
-        icon: "success",
-        title: "Room Updated",
-        text: "Room has been updated",
-      }).then((result) => {
-        document.location.reload();
-      });
-      document.location.reload();
+      response &&
+        SWAL.fire({
+          icon: "success",
+          title: "Room Updated",
+          text: "Room has been updated",
+        }).then((result) => {
+          document.location.reload();
+        });
     } catch (error) {
       console.log(error);
     }

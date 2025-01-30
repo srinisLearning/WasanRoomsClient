@@ -16,8 +16,7 @@ import ProfilePage from "./pages/ProfilePage";
 //import "dotenv/config";
 //BASE_URL = process.env.REACT_APP_API_URL;
 //axios.defaults.baseURL = BASE_URL;
-//axios.defaults.baseURL = " http://127.0.0.1:6066";
-axios.defaults.baseURL = "https://wasan-rooms-server.onrender.com/";
+axios.defaults.baseURL = " http://127.0.0.1:6066";
 function App() {
   //console.log(process.env.REACT_APP_API_URL);
   return (
@@ -40,7 +39,7 @@ function App() {
       </Routes>
 
       <footer className="bg-primary text-white text-center p-4 h-25 w-full">
-        &copy; 2025 Wasan Rooms
+        &copy; 2024 Wasan Rooms
       </footer>
     </>
   );

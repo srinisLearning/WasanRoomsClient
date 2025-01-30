@@ -36,6 +36,7 @@ const BookingPageComponent = ({ room }) => {
       roomid: room._id,
       userid: user._id,
       userName: user.name,
+      roomType: roomType,
       fromdate: dates[0].format("DD-MM-YYYY"),
       todate: dates[1].format("DD-MM-YYYY"),
       totalDays: diff,
@@ -178,7 +179,7 @@ const BookingPageComponent = ({ room }) => {
                     : ""}
                 </p>
                 <hr className="my-3" />
-                <p>Basic Cost per Day : {basicCost}</p>
+                <p>{/* Basic Cost per Day : {basicCost} */}</p>
                 Rate per Day : {totalAmountPerDay}
                 <p>
                   Cost for {diff} days : {totalAmountPerDay * diff}
