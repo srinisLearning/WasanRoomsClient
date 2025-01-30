@@ -26,8 +26,9 @@ const BookingPageComponent = ({ room }) => {
     additionalOccupancyCost = additionalOccupancy * basicCost * 0.3;
   }
 
-  let totalAmountPerDay = basicCost * costFactor + additionalOccupancyCost;
+  let totalAmountPerDay = basicCost * costFactor;
   let totalAmount = totalAmountPerDay * diff;
+  totalAmount += additionalOccupancyCost * diff;
 
   const bookRoom = async () => {};
   const onToken = async (token) => {
@@ -184,7 +185,14 @@ const BookingPageComponent = ({ room }) => {
                 <p>
                   Cost for {diff} days : {totalAmountPerDay * diff}
                 </p>
-                <p>Additional Occupancy Cost : {additionalOccupancyCost}</p>
+                <p>
+                  Additional Occupancy Cost Per Day : {additionalOccupancyCost}
+                </p>
+                <p>
+                  Additional Occupancy Cost for {diff} Days :{" "}
+                  {additionalOccupancyCost * diff}
+                </p>
+                <hr className="my-3" />
                 <p className="text-primary font-extrabold my-3">
                   Total Amount : {totalAmount}
                 </p>
