@@ -40,7 +40,6 @@ const BookingPageComponent = ({ room }) => {
       fromdate: dates[0].format("DD-MM-YYYY"),
       todate: dates[1].format("DD-MM-YYYY"),
       totalDays: diff,
-      roomType: roomType,
       additionalOccupancy: additionalOccupancy,
       totalAmount: totalAmount,
       transactionId: "",
@@ -161,9 +160,9 @@ const BookingPageComponent = ({ room }) => {
                           setAdditionalOccupancy(e.target.value);
                         }}
                       >
-                        <option value="0">0</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
+                        <option value={0}>0</option>
+                        <option value={1}>1</option>
+                        <option value={2}>2</option>
                       </select>
                     </p>
                   )}
