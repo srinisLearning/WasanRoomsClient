@@ -27,8 +27,7 @@ const BookingPageComponent = ({ room }) => {
   }
 
   let totalAmountPerDay = basicCost * costFactor;
-  let totalAmount = totalAmountPerDay * diff;
-  totalAmount += additionalOccupancyCost * diff;
+  let totalAmount = totalAmountPerDay * diff + additionalOccupancyCost * diff;
 
   const bookRoom = async () => {};
   const onToken = async (token) => {
