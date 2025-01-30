@@ -184,13 +184,18 @@ const BookingPageComponent = ({ room }) => {
                 <p>
                   Cost for {diff} days : {totalAmountPerDay * diff}
                 </p>
-                <p>
-                  Additional Occupancy Cost Per Day : {additionalOccupancyCost}
-                </p>
-                <p>
-                  Additional Occupancy Cost for {diff} Days :{" "}
-                  {additionalOccupancyCost * diff}
-                </p>
+                {additionalOccupancy > 0 && (
+                  <div>
+                    <p>
+                      Additional Occupancy Cost Per Day :{" "}
+                      {additionalOccupancyCost}
+                    </p>
+                    <p>
+                      Additional Occupancy Cost for {diff} Days :{" "}
+                      {additionalOccupancyCost * diff}
+                    </p>
+                  </div>
+                )}
                 <hr className="my-3" />
                 <p className="text-primary font-extrabold my-3">
                   Total Amount : {totalAmount}
