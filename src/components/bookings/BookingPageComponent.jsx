@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 import { DatePicker, Space } from "antd";
 import StripeCheckout from "react-stripe-checkout";
 const { RangePicker } = DatePicker;
+import moment from "moment";
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
 
 import axios from "axios";
 import Swal from "sweetalert2";
@@ -18,8 +22,9 @@ const BookingPageComponent = ({ room }) => {
   const [costFactor, setCostFactor] = React.useState(1);
   let additionalOccupancyCost = 0;
 
-  //console.log(dates);
+  console.log(dates);
   let diff = 0;
+
   diff = Math.floor((dates[1] - dates[0]) / (1000 * 60 * 60 * 24));
   let basicCost = room.rentPerDay;
   if (additionalOccupancy > 0) {
@@ -67,6 +72,29 @@ const BookingPageComponent = ({ room }) => {
     //console.log(token);
   };
 
+  const rangePickerOnChange = (values) => {
+    if (values[0].isBefore(moment(), "day")) {
+      console.log("Invalid Date");
+      Swal.fire(
+        "Sorry!!!",
+        "Check In Date should be greater than or equal to Today",
+        "error"
+      );
+      return;
+    }
+    if (values[0].isAfter(moment().add(60, "days"), "day")) {
+      console.log("Invalid Date");
+      Swal.fire(
+        "Sorry!!!",
+        "Check In Date should be within 60 days from Today",
+        "error"
+      );
+      return;
+    }
+
+    setDates(values);
+  };
+
   const roomTypeChange = (e) => {
     //  console.log(e.target.value);
     switch (e.target.value) {
@@ -94,7 +122,11 @@ const BookingPageComponent = ({ room }) => {
   };
   return (
     <>
-      <div className="grid grid-rows-1 grid-cols-2 gap-4 border border-primary-300  p-4 my-2 shadow-xl max-w-4xl mx-auto rounded-xl">
+      <div
+        className="grid grid-rows-1 grid-cols-2 gap-4 border border-primary-300  p-4 my-2 shadow-xl max-w-4xl mx-auto rounded-xl"
+        data-aos="flip-down"
+        data-aos-duration="1500"
+      >
         <div>
           {/* {room.imageurls.length > 0 && <img src={room.imageurls[0]} />} */}
           <img src={room.imageUrl} />
@@ -138,9 +170,7 @@ const BookingPageComponent = ({ room }) => {
               <RangePicker
                 className="border border-primary m-2"
                 placeholder={["Check In", "Check Out"]}
-                onChange={(values) => {
-                  setDates(values);
-                }}
+                onChange={rangePickerOnChange}
               />
             </Space>
           </div>

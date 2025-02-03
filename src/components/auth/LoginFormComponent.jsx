@@ -28,7 +28,7 @@ const LoginFormComponent = () => {
   };
   const loginUser = async (e) => {
     e.preventDefault();
-    if (user.email !== "" && !user.password !== "") {
+    if (user.email !== "" && user.password !== "") {
       console.log(user);
       try {
         setLoading(true);
@@ -55,7 +55,7 @@ const LoginFormComponent = () => {
     <>
       {loading && <LoadingComponent />}
 
-      <form className="mt-8 space-y-6">
+      <form className="mt-2 space-y-2 flex flex-col">
         <div>
           <label
             htmlFor="email"

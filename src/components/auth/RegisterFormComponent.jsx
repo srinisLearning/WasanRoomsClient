@@ -35,13 +35,32 @@ const RegisterFormComponent = () => {
 
   const checkPasswords = () => {
     if (user.password !== user.confirmPassword) {
-      alert("Passwords do not match");
+      setError(true);
+      SWAL.fire({
+        title: "Error",
+        text: "Passwords do not match",
+        icon: "error",
+      });
     }
   };
 
   const registerUser = async (e) => {
     e.preventDefault();
     console.log(user);
+    if (
+      user.name === "" ||
+      user.email === "" ||
+      user.mobile === "" ||
+      user.password === "" ||
+      user.confirmPassword === ""
+    ) {
+      SWAL.fire({
+        title: "Error",
+        text: "Please enter all the fields",
+        icon: "error",
+      });
+      return;
+    }
     try {
       setLoading(true);
 
@@ -76,7 +95,7 @@ const RegisterFormComponent = () => {
     <>
       {loading && <LoadingComponent />}
       {/*  {success && <SuccessComponent message="User Registered Successfully" />} */}
-      {error && <ErrorComponent error="Error Registering User" />}
+
       <form className="mt-8 space-y-6">
         <div>
           <label
