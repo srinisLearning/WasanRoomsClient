@@ -67,6 +67,7 @@ const LoginFormComponent = () => {
             id="email"
             name="email"
             type="email"
+            placeholder="Enter your Email"
             value={user.email}
             onChange={handleChange}
             required
@@ -85,6 +86,7 @@ const LoginFormComponent = () => {
             id="password"
             name="password"
             type="password"
+            placeholder="Enter your Password"
             value={user.password}
             onChange={handleChange}
             required

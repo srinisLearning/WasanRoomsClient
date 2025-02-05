@@ -95,7 +95,7 @@ const RegisterFormComponent = () => {
     <>
       {loading && <LoadingComponent />}
       {/*  {success && <SuccessComponent message="User Registered Successfully" />} */}
-
+      <p className="text-xs text-center">All Fields are Required</p>
       <form className="mt-8 space-y-6">
         <div>
           <label
@@ -108,6 +108,7 @@ const RegisterFormComponent = () => {
             id="name"
             name="name"
             type="text"
+            placeholder="Enter your Name"
             value={user.name}
             onChange={handleChange}
             required
@@ -125,6 +126,7 @@ const RegisterFormComponent = () => {
             id="email"
             name="email"
             type="email"
+            placeholder="Enter your Email"
             value={user.email}
             onChange={handleChange}
             required
@@ -142,6 +144,7 @@ const RegisterFormComponent = () => {
             id="mobile"
             name="mobile"
             type="tel"
+            placeholder="Enter your Mobile"
             value={user.mobile}
             onChange={handleChange}
             required
@@ -159,6 +162,7 @@ const RegisterFormComponent = () => {
             id="password"
             name="password"
             type="password"
+            placeholder="Enter your Password"
             value={user.password}
             onChange={handleChange}
             required
@@ -176,6 +180,7 @@ const RegisterFormComponent = () => {
             id="confirmPassword"
             name="confirmPassword"
             type="password"
+            placeholder="Confirm your Password"
             value={user.confirmPassword}
             onChange={handleChange}
             onBlur={checkPasswords}
