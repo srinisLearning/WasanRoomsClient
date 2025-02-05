@@ -13,11 +13,11 @@ import AdminRoomPage from "./pages/admin/AdminRoomPage";
 import AdminBookingsPage from "./pages/admin/AdminBookingsPage";
 import ProfilePage from "./pages/ProfilePage";
 
-/* lOCAL HOST BASE  URL */
-axios.defaults.baseURL = " http://127.0.0.1:6066/";
+/* lOCAL HOST BASE  URL 
+axios.defaults.baseURL = " http://127.0.0.1:6066/";*/
 
-/* REMOTE RENDER BASE URL 
-axios.defaults.baseURL = "https://wasan-rooms-server.onrender.com/";*/
+/* REMOTE RENDER BASE URL */
+axios.defaults.baseURL = "https://wasan-rooms-server.onrender.com/";
 
 function App() {
   //console.log(process.env.REACT_APP_API_URL);
